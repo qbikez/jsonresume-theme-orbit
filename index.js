@@ -2,6 +2,10 @@ var fs = require("fs");
 var path = require('path');
 var Handlebars = require("handlebars");
 var markdown = require('helper-markdown');
+const handlebarsWax = require('handlebars-wax');
+
+
+
 
 Handlebars.registerHelper('markdown', function() {
 	var markup = markdown().apply(this, arguments);
@@ -43,12 +47,17 @@ Handlebars.registerHelper('award', function(str) {
 Handlebars.registerHelper('skillLevel', function(str) {
 	switch (str.toLowerCase()) {
 		case "beginner":
+		case "1":
 			return "25%";
 		case "intermediate":
+		case "2":
 			return "50%";
 		case "advanced":
+		case "3":
+		case "4":
 			return "75%";
 		case "master":
+		case "5":
 			return "100%";
 		default:
 			return parseInt(str) + "%"
@@ -98,28 +107,17 @@ function fixWork(work) {
 }
 
 function render(resume) {
+	let wax = handlebarsWax(Handlebars);
 	var css = fs.readFileSync(__dirname + "/assets/css/styles.css", "utf-8");
 	var js = fs.readFileSync(__dirname + "/assets/js/main.js", "utf-8");
 	var tpl = fs.readFileSync(__dirname + "/resume.hbs", "utf-8");
 
 	fixResume(resume);
 
-	var partialsDir = path.join(__dirname, 'partials');
-	var filenames = fs.readdirSync(partialsDir);
+	var partialsDir = path.join(__dirname, 'partials/**/*.hbs');
+	wax.partials(partialsDir);	
 
-	filenames.forEach(function (filename) {
-	  var matches = /^([^.]+).hbs$/.exec(filename);
-	  if (!matches) {
-	    return;
-	  }
-	  var name = matches[1];
-	  var filepath = path.join(partialsDir, filename);
-	  var template = fs.readFileSync(filepath, 'utf8');
-
-	  Handlebars.registerPartial(name, template);
-	});
-
-	return Handlebars.compile(tpl)({
+	return wax.compile(tpl)({
 		css: css,
 		js: js,
 		resume: resume

@@ -43,7 +43,7 @@ p {
 .sidebar-wrapper {
     background: @theme-color;
     position: absolute;
-    right: 0;
+    left: 0;
     width: @sidebar-width;
     height: 100%;
     min-height: @sidebar-minheight;
@@ -156,7 +156,7 @@ p {
 .main-wrapper {
     background: #fff;
     padding: 60px;
-    padding-right: @sidebar-width + 60px;
+    padding-left: @sidebar-width + 60px;
     min-height: @sidebar-minheight;
     .section-title {
         text-transform: uppercase;
@@ -249,6 +249,19 @@ p {
     .level-bar-inner {
         height: 12px;
         background: lighten(@theme-color, 15%);
+    }
+}
+
+.sidebar-wrapper {
+    .skillset {
+        .level-bar {
+            height: 12px;
+            background: lighten(@theme-color, 15%);
+        }
+        .level-bar-inner {
+            height: 12px;
+            background: @smoky-white;
+        }
     }
 }
 

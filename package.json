@@ -22,8 +22,10 @@
     "release:prepare": "npm version patch -m \"Release: %s\""
   },
   "dependencies": {
-    "handlebars": "^4.0.11",
-    "helper-markdown": "^1.0.0"
+    "handlebars": "^4.1.0",
+    "handlebars-wax": "^6.1.0",
+    "helper-markdown": "^1.0.0",
+    "resume-cli": "^1.1.2"
   },
   "devDependencies": {
     "less": "^2.7.3"
