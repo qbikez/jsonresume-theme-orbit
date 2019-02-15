@@ -1,5 +1,5 @@
 /* Extra small devices (phones, less than 768px) */
-@media (max-width: 767px) { 
+@media only screen and (max-width: 767px) { 
     
     .sidebar-wrapper {
         position: static;
@@ -23,13 +23,13 @@
 
 }
 /* Small devices (tablets, 768px and up) */
-@media (min-width: 768px) { 
+@media not print and (min-width: 768px) { 
      
     
 }
 
 /* Medium devices (desktops, 992px and up) */
-@media (min-width: 992px) {
+@media (min-width: 992px), print {
     
     .skillset .level-title {
         display: inline-block;
@@ -66,4 +66,17 @@
 
 }
 
+@media print {
+    body {
+        background: none;
+        padding: 0px;
+        -webkit-print-color-adjust: exact;
+    }
+    .wrapper {
+        // max-width: 978;
+        max-width: unset;
+        box-shadow: unset;
+        -webkit-box-shadow: unset;
+    }
+}
 

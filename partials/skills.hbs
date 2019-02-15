@@ -3,6 +3,22 @@
         <h2 class="section-title"><i class="fa fa-rocket"></i>Skills &amp; Proficiency</h2>
         <div class="skillset">
             {{#resume.skills}}
+            <div class="item">
+                 <h3 class="level-title">{{name}}</h3>
+                    {{!-- <div class="level-bar">
+                        <div class="level-bar-inner" data-level="{{skillLevel level}}">
+                        </div>
+                    </div><!--//level-bar--> --}}
+                <ul class="keywords">
+                    {{#keywords}}
+                    <li>{{.}}</li>
+                    {{/keywords}}
+                </ul>
+            </div>
+            {{/resume.skills}}
+        </div>
+        {{!-- <div class="skillset">
+            {{#resume.skills}}
                 <div class="item">
                     <h3 class="level-title">{{name}}</h3>
                     <div class="level-bar">
@@ -12,6 +28,6 @@
                 </div><!--//item-->
             {{/resume.skills}}
 
-        </div>
+        </div> --}}
     </section><!--//skills-section-->
 {{/if}}

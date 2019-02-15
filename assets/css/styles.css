@@ -41,6 +41,7 @@ a:focus {
 }
 p {
   line-height: 1.5;
+  margin-bottom: 5px;
 }
 .wrapper {
   background: #42A8C0;
@@ -55,7 +56,7 @@ p {
   background: #42A8C0;
   position: absolute;
   left: 0;
-  width: 240px;
+  width: 300px;
   height: 100%;
   min-height: 800px;
   color: #fff;
@@ -84,6 +85,7 @@ p {
 }
 .sidebar-wrapper .profile {
   margin-bottom: 15px;
+  border-radius: 50%;
 }
 .sidebar-wrapper .contact-list .fa {
   margin-right: 5px;
@@ -155,7 +157,7 @@ p {
 .main-wrapper {
   background: #fff;
   padding: 60px;
-  padding-left: 300px;
+  padding-left: 360px;
   min-height: 800px;
 }
 .main-wrapper .section-title {
@@ -189,7 +191,7 @@ p {
   top: -2px;
 }
 .main-wrapper .section {
-  margin-bottom: 60px;
+  margin-bottom: 30px;
 }
 .main-wrapper .experiences-section .item {
   margin-bottom: 30px;
@@ -229,13 +231,14 @@ p {
   margin-bottom: 15px;
 }
 .skillset .item {
-  margin-bottom: 15px;
+  margin-bottom: 2px;
   overflow: hidden;
 }
 .skillset .level-title {
   font-size: 14px;
   margin-top: 0;
   margin-bottom: 12px;
+  padding-top: 4px;
 }
 .skillset .level-bar {
   height: 12px;
@@ -244,6 +247,32 @@ p {
 .skillset .level-bar-inner {
   height: 12px;
   background: #7bc2d3;
+}
+.skillset ul.keywords,
+.skillset ul.courses {
+  margin-top: 0px;
+}
+.skillset ul.keywords li,
+.skillset ul.courses li {
+  display: inline-block;
+  margin: 0px 2px 2px 0;
+  padding: 4px 5px 5px;
+  font-size: 11px;
+  line-height: 1;
+  border-radius: 3px;
+  /*text-transform: lowercase;*/
+  background: #f5f5f5;
+  border: 0 solid #dfeaf1;
+  white-space: nowrap;
+}
+.skillset ul.keywords li.secondary {
+  /*text-transform: lowercase;*/
+  background-color: white !important;
+  white-space: nowrap;
+}
+.skillset ul.keywords li:hover,
+.skillset ul.courses li:hover {
+  background: #dfeaf0;
 }
 .sidebar-wrapper .skillset .level-bar {
   height: 12px;
@@ -266,7 +295,7 @@ p {
   color: #fb866a;
 }
 /* Extra small devices (phones, less than 768px) */
-@media (max-width: 767px) {
+@media only screen and (max-width: 767px) {
   .sidebar-wrapper {
     position: static;
     width: inherit;
@@ -285,7 +314,7 @@ p {
 }
 /* Small devices (tablets, 768px and up) */
 /* Medium devices (desktops, 992px and up) */
-@media (min-width: 992px) {
+@media (min-width: 992px), print {
   .skillset .level-title {
     display: inline-block;
     float: left;
@@ -308,3 +337,15 @@ p {
 }
 /* Large devices (large desktops, 1200px and up) */
 /* Ex-Large devices (large desktops, 1200px and up) */
+@media print {
+  body {
+    background: none;
+    padding: 0px;
+    -webkit-print-color-adjust: exact;
+  }
+  .wrapper {
+    max-width: unset;
+    box-shadow: unset;
+    -webkit-box-shadow: unset;
+  }
+}

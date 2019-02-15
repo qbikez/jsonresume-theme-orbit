@@ -12,8 +12,17 @@
                     <div class="company">{{#if url}}<a href="{{url}}" target="_blank">{{/if}}{{name}}{{#if location}}, {{location}}{{/if}}{{#if url}}</a>{{/if}}</div>
                 </div><!--//meta-->
                 <div class="details">
-                    {{#markdown}}{{summary}}{{/markdown}}
+                    {{#markdown}}{{paragraphSplit summary}}{{/markdown}}
                 </div><!--//details-->
+                {{#if highlights.length}}
+                <div class="highlights">
+                <ul class="highlights">
+                    {{#each highlights}}
+                        <li>{{safeString .}}</li>
+                    {{/each}}
+                </ul>
+                </div><!--//highlights-->
+                {{/if}}               
             </div><!--//item-->
         {{/resume.work}}
     </section><!--//section-->

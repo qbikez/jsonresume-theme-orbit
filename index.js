@@ -64,6 +64,16 @@ Handlebars.registerHelper('skillLevel', function(str) {
 	}
 });
 
+Handlebars.registerHelper('paragraphSplit', (plaintext) => {
+    const lines = plaintext instanceof Array ? plaintext.map(l => l.split(/\r\n|\r|\n/g)).reduce((flat, toFlatten) => flat.concat(toFlatten), []) : plaintext.split(/\r\n|\r|\n/g);
+    const output = lines.filter(line => line).reduce((a, b) => `${a}<p>${b}</p>`, '');
+    return new Handlebars.SafeString(output);
+});
+Handlebars.registerHelper('safeString', (plaintext) => {
+    return new Handlebars.SafeString(plaintext.trim());
+});
+
+
 // Resume.json used to have website property in some entries.  This has been renamed to url.
 // However the demo data still uses the website property so we will also support the "wrong" property name.
 // Fix the resume object to use url property
@@ -108,6 +118,7 @@ function fixWork(work) {
 
 function render(resume) {
 	let wax = handlebarsWax(Handlebars);
+	var bootstrap = fs.readFileSync(__dirname + "/assets/css/bootstrap.css", "utf-8");
 	var css = fs.readFileSync(__dirname + "/assets/css/styles.css", "utf-8");
 	var js = fs.readFileSync(__dirname + "/assets/js/main.js", "utf-8");
 	var tpl = fs.readFileSync(__dirname + "/resume.hbs", "utf-8");
@@ -118,6 +129,7 @@ function render(resume) {
 	wax.partials(partialsDir);	
 
 	return wax.compile(tpl)({
+		bootstrap: bootstrap,
 		css: css,
 		js: js,
 		resume: resume

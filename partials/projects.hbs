@@ -7,7 +7,7 @@
         {{#resume.projects}}
             <div class="item">
                 <span class="project-title"><a href="{{url}}" target="_blank">{{name}}</a></span> -
-                <span class="project-tagline">{{#markdown}}{{description}}{{/markdown}}</span>
+                <span class="project-tagline">{{#markdown}}{{safeString summary}}{{/markdown}}</span>
             </div><!--//item-->
         {{/resume.projects}}
     </section><!--//section-->

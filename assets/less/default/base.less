@@ -1,4 +1,4 @@
-@sidebar-width: 240px;
+@sidebar-width: 300px;
 @sidebar-minheight: 800px;
 
 /* ======= Base ======= */
@@ -30,6 +30,7 @@ a {
 
 p {
     line-height: 1.5;
+    margin-bottom: 5px;
 }
 
 .wrapper {
@@ -73,6 +74,7 @@ p {
     }
     .profile {
         margin-bottom: 15px;
+        border-radius: 50%;
     }
     .contact-list {
         .fa {
@@ -157,6 +159,7 @@ p {
     background: #fff;
     padding: 60px;
     padding-left: @sidebar-width + 60px;
+    // padding-top: 30px;
     min-height: @sidebar-minheight;
     .section-title {
         text-transform: uppercase;
@@ -183,7 +186,7 @@ p {
 
     }
     .section {
-        margin-bottom: 60px;
+        margin-bottom: 30px;
     }
     
     .experiences-section {
@@ -234,13 +237,14 @@ p {
 
 .skillset {
     .item {
-        margin-bottom: 15px;
+        margin-bottom: 2px;
         overflow: hidden;
     }
     .level-title {
         font-size: 14px;
         margin-top: 0;
         margin-bottom: 12px;
+        padding-top: 4px;
     }
     .level-bar {
         height: 12px;
@@ -249,6 +253,40 @@ p {
     .level-bar-inner {
         height: 12px;
         background: lighten(@theme-color, 15%);
+    }
+    
+    ul.keywords,
+    ul.courses {
+        margin-top: 0px;
+        // margin-left: 130px;
+    }
+
+    ul.keywords li,
+    ul.courses li {
+        display: inline-block;
+        margin: 0px 2px 2px 0;
+        padding: 4px 5px 5px;
+        font-size: 11px;
+        line-height: 1;
+        border-radius: 3px;
+        /*text-transform: lowercase;*/
+        // color: white;
+        // background: lighten(@theme-color, 15%);
+        background: @smoky-white;
+        border: 0 solid #dfeaf1;
+        white-space: nowrap;
+    }
+
+    ul.keywords li.secondary
+    {
+        /*text-transform: lowercase;*/
+        background-color: white !important;
+        white-space: nowrap;
+    }
+
+    ul.keywords li:hover,
+    ul.courses li:hover {
+        background: #dfeaf0;
     }
 }
 
