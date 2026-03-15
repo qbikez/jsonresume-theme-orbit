@@ -16,6 +16,7 @@ body {
   padding: 30px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-align: justify;
 }
 h1,
 h2,
@@ -56,7 +57,7 @@ p {
   background: #42A8C0;
   position: absolute;
   left: 0;
-  width: 300px;
+  width: 250px;
   height: 100%;
   min-height: 800px;
   color: #fff;
@@ -87,9 +88,12 @@ p {
   margin-bottom: 15px;
   border-radius: 50%;
 }
+.sidebar-wrapper .contact-list {
+  font-size: 0.95em;
+}
 .sidebar-wrapper .contact-list .fa {
   margin-right: 5px;
-  font-size: 18px;
+  font-size: 17px;
   vertical-align: middle;
 }
 .sidebar-wrapper .contact-list li {
@@ -102,7 +106,7 @@ p {
   font-size: 14px;
 }
 .sidebar-wrapper .container-block {
-  padding: 30px;
+  padding: 15px;
 }
 .sidebar-wrapper .container-block-title {
   text-transform: uppercase;
@@ -156,8 +160,10 @@ p {
 }
 .main-wrapper {
   background: #fff;
-  padding: 60px;
-  padding-left: 360px;
+  padding-left: 290px;
+  padding-right: 40px;
+  padding-top: 60px;
+  padding-bottom: 60px;
   min-height: 800px;
 }
 .main-wrapper .section-title {
@@ -230,6 +236,9 @@ p {
 .main-wrapper .projects-section .item {
   margin-bottom: 15px;
 }
+.keywords {
+  text-align: left;
+}
 .skillset .item {
   margin-bottom: 2px;
   overflow: hidden;
@@ -282,12 +291,18 @@ p {
   height: 12px;
   background: #f5f5f5;
 }
+.sidebar-wrapper .skillset ul.keywords li {
+  background: #7bc2d3;
+}
+.sidebar-wrapper .skillset ul.keywords {
+  padding-inline-start: 0px;
+}
 .footer {
   padding: 30px;
   padding-top: 60px;
 }
 .footer .copyright {
-  line-height: 1.6;
+  line-height: 1.0;
   color: #545E6C;
   font-size: 13px;
 }
@@ -318,7 +333,6 @@ p {
   .skillset .level-title {
     display: inline-block;
     float: left;
-    width: 30%;
     margin-bottom: 0;
   }
   .skillset .level-bar {
@@ -327,9 +341,6 @@ p {
     float: left;
     position: relative;
     top: 1px;
-  }
-  .sidebar-wrapper .skillset .level-title {
-    width: 50%;
   }
   .sidebar-wrapper .skillset .level-bar {
     width: 50%;

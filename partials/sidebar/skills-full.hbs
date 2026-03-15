@@ -1,0 +1,37 @@
+{{!-- {{#if resume.skills}}
+    <section class="skills-container container-block">
+        <h2 class="container-block-title">Skills</h2>
+        <div class="skillset">
+            {{#resume.skills}}
+                <div class="item">
+                    <h3 class="level-title">{{name}}</h3>
+                    <div class="level-bar">
+                        <div class="level-bar-inner" data-level="{{skillLevel level}}">
+                        </div>
+                    </div><!--//level-bar-->
+                </div><!--//item-->
+            {{/resume.skills}}
+
+        </div>
+    </section><!--//skills-section-->
+{{/if}} --}}
+
+{{#if resume.skills}}
+    <section class="skills-container container-block">
+        <h2 class="container-block-title">Skills</h2>
+        <div class="skillset">
+            {{#resume.skills}}
+            <div class="item">
+                <h3 class="level-title">{{name}}</h3>
+                </div>
+                <div class="item">
+                <ul class="keywords">
+                    {{#keywords}}
+                    <li>{{.}}</li>
+                    {{/keywords}}
+                </ul>
+            </div>
+            {{/resume.skills}}
+        </div>
+    </section><!--//skills-container-->
+{{/if}}
